@@ -1,6 +1,9 @@
 # PixiJSでゲームを作る
 PixiJSで２Dゲームを作る。  
 
+# DEMO
+https://yuki-sakaguchi.github.io/pixi-game/public/index.html
+
 # 開発
 ```
 npm run start
