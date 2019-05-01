@@ -51,7 +51,7 @@ BOMBER_MAID.BOMBER_MAID_OBJECT = {
      */
     const loader = new PIXI.loaders.Loader();
     loader
-    .add('sprite', '../images/sprite.json')
+    .add('sprite', 'https://yuki-sakaguchi.github.io/pixi-game/public/images/sprite.json')
     .once('complete', () => {
 
       /**
