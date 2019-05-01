@@ -1,0 +1,39 @@
+{
+  "name": "pixi-game",
+  "version": "1.0.0",
+  "description": "PixiJSでゲームを作る",
+  "scripts": {
+    "start": "npm run server & npm run css:watch & npm run js:watch",
+    "server": "php -S localhost:8080 -t ./public/",
+    "css:watch": "chokidar './src/css/' -c 'npm run css:build'",
+    "css:build": "npm run css:sass & npm run css:prefix",
+    "css:sass": "node-sass ./src/css/*.scss -o ./public/css/ --output-style expanded",
+    "css:prefix": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions' ./public/css/bundle.css -d ./public/css/",
+    "js:build": "webpack --config ./webpack.config.js",
+    "js:watch": "webpack --config ./webpack.config.js --watch",
+    "img:sprite": "spritesmith --rc ./spritesmith.js"
+  },
+  "author": "Yuki Sakaguchi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.0.5",
+    "brfs": "^2.0.2",
+    "chokidar-cli": "^1.2.2",
+    "json-loader": "^0.5.7",
+    "node-sass": "^4.11.0",
+    "path": "^0.12.7",
+    "pixi.js": "^4.8.7",
+    "postcss-cli": "^6.1.2",
+    "spritesmith-cli": "^1.1.2",
+    "spritesmith-texturepacker": "^1.0.0",
+    "transform-loader": "^0.2.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "pixi-display": "^1.1.1"
+  }
+}
